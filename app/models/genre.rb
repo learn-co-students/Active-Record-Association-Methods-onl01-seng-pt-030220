@@ -5,17 +5,17 @@ class Genre < ActiveRecord::Base
   def song_count
     # return the number of songs in a genre
     self.songs.count
+    # self.songs.length
   end
 
   def artist_count
     # return the number of artists associated with the genre
     self.artists.count
+    # self.artists.length
   end
 
   def all_artist_names
     # return an array of strings containing every musician's name
-    self.artists.map do |artist|
-      artist.name
-    end
+    self.artists.map(&:name)
   end
 end
