@@ -8,9 +8,7 @@ class Song < ActiveRecord::Base
 
 
   def drake_made_this
-  a = Artist.find_or_create_by(name:"Drake")
-  a.songs << self
-  a
+    self.artist = Artist.find_or_create_by(name:"Drake")
     # when this method is called it should assign the song's artist to Drake
     # Drake doesn't exist in the database as an artist yet, so you'll have to create a record
     # Hint: you won't want to create an artist record every time this method is called, only if an Drake is *not found*
